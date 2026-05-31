@@ -1,0 +1,38 @@
+# Build files
+node_modules/
+dist/
+build/
+*.min.css
+*.min.js
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS files
+.DS_Store
+.AppleDouble
+.LSOverride
+*.log
+
+# Dependencies
+package-lock.json
+yarn.lock
+
+# Cache files
+.cache/
+.parcel-cache/
+
+# Testing
+coverage/
+.nyc_output/

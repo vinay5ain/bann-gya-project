@@ -1,102 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Bann Gya Project - An interactive, fun, and visually stunning website 😎" />
+    <meta name="theme-color" content="#0f0c29" />
+
+    <!-- Title -->
     <title>Bann Gya Project 😎</title>
-</head>
-<body style="background-color: lightgreen;">
-    <main>
-        <div id="question">Bann Gya Project 😎</div>
-        <button id="yes-button" onclick="yes()">Yes</button>
-        <button id="no-button" onclick="no()">No</button>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='75' font-size='75'%3E😎%3C/text%3E%3C/svg%3E" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Background Elements -->
+    <!-- Particles Container -->
+    <div id="particles-container" aria-hidden="true"></div>
+
+    <!-- Emojis Container -->
+    <div id="emojis-container" aria-hidden="true"></div>
+
+    <!-- Chess Pieces Background -->
+    <div id="chess-pieces" aria-hidden="true"></div>
+
+    <!-- Sound Toggle Button -->
+    <button class="sound-toggle" aria-label="Toggle sound" title="Toggle Sound">🔊</button>
+
+    <!-- Main Content -->
+    <main role="main">
+      <!-- Card Container with Glassmorphism -->
+      <div class="card-container">
+        <!-- Progress Indicator -->
+        <div class="progress-indicator"></div>
+
+        <!-- Question Display -->
+        <div id="question" role="status" aria-live="polite" aria-atomic="true">
+          Bann Gya Project 😎
+        </div>
+
+        <!-- Button Container -->
+        <div class="button-container">
+          <button id="yes-button" type="button" aria-label="Yes Button" title="Click to agree">
+            YES
+          </button>
+          <button id="no-button" type="button" aria-label="No Button" title="Click to decline">
+            NO
+          </button>
+        </div>
+      </div>
     </main>
 
-    <style>
-        main {
-            max-width: 80%;
-            margin: auto;
-            text-align: center;
-            padding-top: 50px;
-        }
+    <!-- Success Modal -->
+    <div id="success-modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+      <div class="modal-content">
+        <h2 id="modal-title">🎉 Project Successfully Completed! 🥳</h2>
+        <p>Vinay Kumar Sain is thrilled with your decision! ❤️</p>
+        <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.7;">Redirecting to WhatsApp in 3 seconds...</p>
+      </div>
+    </div>
 
-        #question {
-            font-family: "Times New Roman", serif;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
+    <!-- Footer -->
+    <footer>
+      Built with ❤️ by <strong>Vinay Kumar Sain</strong>
+    </footer>
 
-        button {
-            display: inline-block;
-            margin: 8px;
-            font-size: 1.2em;
-            padding: 10px 20px;
-            border: none;
-            color: white;
-            cursor: pointer;
-            border-radius: 8px;
-        }
-
-        #yes-button {
-            background-color: green;
-        }
-
-        #no-button {
-            background-color: red;
-        }
-
-        img {
-            width: 90%;
-            max-width: 300px;
-            height: auto;
-            margin-top: 20px;
-        }
-    </style>
-
-    <script>
-        const q = document.getElementById("question");
-        const yes_button = document.getElementById("yes-button");
-        const no_button = document.getElementById("no-button");
-        let current = 0;
-
-        const yes_no = [
-            ["Bann Gya Project 😎", null],
-            ["Are bhaiii Bann Gya Project 🔥", null],
-            ["Ho Gya Finish 🥳", null],
-            ["Arre, matlab itne bhaaw<br>achhe bachhe aise nahin karte, chalo", null],
-            ["Mene nahin pda jo bhi reason diya ho, ab bs yes dabao", function(){ prompt("Batao kyu nahi keh rahe YES", "Chalo Bann Gya Project 🎯") }],
-            ["Firse NO <h2>:/</h2>", null],
-            ["Dikkat kya hai ??? kyu nahin daba rahe YES ?? background achha nahin hai kya ??", null],
-            ["Ab thik hai color ?", function(){document.body.style.backgroundImage="linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)"}],
-            ["Achha to ab kaisa hai color ?", function(){document.body.style.backgroundColor="pink";document.body.style.backgroundImage="";}],
-            ["Kya chakkar hai<br>Yes ka button nahin dikh rha kya", null],
-            ["Lo ab dikh rha hoga ab dabao", ()=>{yes_button.style.fontSize="3em"}],
-            ["Khabardaar jo ek aur baar No dabaya to..", null],
-            ["<h1>😠</h1>", null],
-            ["Is NO ke button me aag lag jaye..", null],
-            ["Lo lga di aag, ab YES dabana nahin to ungli jal jaygi tumhari", ()=>{no_button.innerText="🔥No🔥"}],
-            ["<h1>🩹</h1>matlab ab bhi,<br>thoda ye bhi nahi socha ke ungli jal jayegi to project kaun banayega..<br><sup>ab YES dabao</sup>", null],
-            ["<img src='kyu-nahi-ja-rahe-bunk-pe.png' alt='funny image'>", null],
-            ["Ab to haan karni padegi, nahin to me is NO ke button ko hi gayb kr dunga 😈", null],
-            ["Om bhatt shua ha..", ()=>{yes_button.style.display="none"}],
-            ["Abe ye to YES ka button hi gayab ho gaya 😶😑🤦<br>thik krta hun zra..", null],
-            ["Abra Kadabra Alakazam...✨", ()=>{yes_button.style.display="inline-block";}],
-            ["Ab mere paas koi option nahin... ab tumhe haan hi karni hogi 😏",null],
-            ["<h1>:)</h1>", ()=>{no_button.style.display="none"}],
-        ];
-
-        function no(){
-            current++;
-            if(current >= yes_no.length) current = yes_no.length - 1;
-            q.innerHTML = yes_no[current][0];
-            if (yes_no[current][1] != null){
-                yes_no[current][1]();
-            }
-        }
-
-        function yes(){
-            window.location.href = `https://wa.me/917982537040?text=I love you vinay please marry me 😘`;
-        }
-    </script>
-</body>
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+  </body>
 </html>
